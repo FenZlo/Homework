@@ -1,10 +1,9 @@
-let arr = [3,4,5,6,7,8,9]
+let arr = [3,4,6]
 
 function findPrime (arr) {
-    let prime = arr.indexOf(function (item) {
+    let prime = arr.findIndex(function (item) {
         return isPrime(item)
     })
-    console.log(prime)
     if (prime > -1) {
         console.log('Простое число есть в данном массиве!')
         return true
