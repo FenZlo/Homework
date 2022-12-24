@@ -1,14 +1,14 @@
-let arr = [3,4,6]
+/*
+Функция проверяет наличие простых чисел в массиве
+*/
 
 function findPrime (arr) {
     let prime = arr.findIndex(function (item) {
         return isPrime(item)
     })
     if (prime > -1) {
-        console.log('Простое число есть в данном массиве!')
         return true
     }
-    else console.log('Прстого числа нет в данном массиве!')
     return false
 }
 
@@ -20,5 +20,4 @@ function isPrime(n) {
     return true
 }
 
-
-findPrime(arr);
+ module.exports = findPrime;
