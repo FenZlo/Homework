@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "node ./tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FenZlo/Homework.git"
+  },
+  "author": "Fen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FenZlo/Homework/issues"
+  },
+  "homepage": "https://github.com/FenZlo/Homework#readme",
+  "dependencies": {
+    "test": "^3.2.1"
+  }
+}
