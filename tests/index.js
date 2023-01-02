@@ -1,2 +1,2 @@
 require('./find-prime');
-require('./filter-by-query.js');
+require('./filter-by-query');

@@ -4,10 +4,7 @@
 
 
 function filterByQuery (array, query) {
-    let Arr = array.filter(function (el) {
-        return el.toLowerCase().indexOf(query.toLowerCase()) > -1
-    })
-    return Arr
+    return array.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) > -1)
 }
 
 module.exports = filterByQuery;
