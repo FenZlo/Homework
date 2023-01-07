@@ -8,6 +8,6 @@ test('Filter by query', t => {
 })
 
 test('Filter by query', t => {
-    assert.deepStrictEqual(filterByQuery(['Фар1та', 'Паблик', 'ЛорФарт1кр', ''], 'а'), [''])
-    assert.deepStrictEqual(filterByQuery(['Moscow', 'Sait-P', 'Vologda'], 'a'), ['Sait-P', 'Vologda'])
+    assert.deepStrictEqual(filterByQuery(['Фар1та', 'Паблик', 'ЛорФарт1кр', ''], 'а'), ['Фар1та', 'Паблик', 'ЛорФарт1кр'])
+    assert.deepStrictEqual(filterByQuery(['111', '222', 'A'], 'a'), ['A'])
 })
