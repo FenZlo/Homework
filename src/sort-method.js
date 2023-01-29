@@ -1,15 +1,20 @@
-function sortMethod (array) {
-    return array.sort(parameterComparison)
-}
+/*
+Второй параметр mode отвечает за выбор того, что будет возвращаться в sortArray
+Если asc, то возвращается -1 и наоборот.
+*/
+function sort (array, mode = 'asc') {
 
-function parameterComparison (a, b) {
-    if (a.length < b.length) {
-        return -1;
-      }
-      if (a.length > b.length) {
-        return 1;
-      }
-      return 0; 
+  const sortedArray = array.slice(0);
+  const numberOfMode = mode === 'asc' ? -1 : 1;
+  
+  return sortedArray.sort((a,b) => {
+    if (a > b) {
+      return -1 * numberOfMode;
+    }
+    if (a < b) {
+      return 1 * numberOfMode;
+    }
+    return 0;
+  })   
 }
-
-module.exports = sortMethod;
+module.exports = sort;

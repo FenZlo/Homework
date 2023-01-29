@@ -1,6 +1,8 @@
-function mapMethod (array) {
-    const newArray = array.map(elem => elem + makeRandomLetter(3))
-    return newArray;
+function mapConcatRandomLetters (array, count = 3) {
+    if (count < 0) {
+        throw new Error('Count can not be a negetive number')
+    }
+    return array.map(elem => elem + makeRandomLetter(count))
 }
 
 function makeRandomLetter(length) {
@@ -13,4 +15,5 @@ function makeRandomLetter(length) {
     return result;
 }
 
-module.exports = mapMethod;
+module.exports = mapConcatRandomLetters;
+
