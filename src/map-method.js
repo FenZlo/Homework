@@ -1,6 +1,6 @@
 function mapConcatRandomLetters (array, count = 3) {
     if (count < 0) {
-        throw new Error('Count can not be a negetive number')
+        throw new Error('Count parameters can not be a negative number')
     }
     return array.map(elem => elem + makeRandomLetter(count))
 }
