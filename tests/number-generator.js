@@ -20,7 +20,7 @@ test('Check generator of numbers for two different arrays', t => {
     });
     const seq = numberGenerator();
     const seq2 = numberGenerator();
-    assert.notEqual(seq, seq2);
+        assert.notEqual(seq, seq2);
     });
 
 test('Check generator of numbers from 1 to 100, the number of numbers is 3', t => {
@@ -30,7 +30,15 @@ test('Check generator of numbers from 1 to 100, the number of numbers is 3', t =
         rangeMax: 1000,
     });
     const seq3 = numberGenerator2();
-    assert.strictEqual(seq3.length, 3);
+        assert.strictEqual(seq3.length, 3);
+    });
+
+test('Check generator of numbers for define parameters', t => {
+    const numberGenerator = generateNumberSequence({
+        count: 5
+    });
+    const seq = numberGenerator();
+        assert.strictEqual(seq.length, 5);
     });
 
 test('Check parametrs of generator for type', t => {
@@ -38,7 +46,7 @@ test('Check parametrs of generator for type', t => {
         const numberGenerator = generateNumberSequence(123);
         const seq = numberGenerator();
         seq; 
-    }, new Error('Function parameters might be object with 3 properties'));
+    }, new Error('Config param should be an object'));
     });
 
 test('Check parametrs of generator for number of objects', t => {
@@ -49,7 +57,21 @@ test('Check parametrs of generator for number of objects', t => {
         });
         const seq = numberGenerator();
         seq; 
-    }, new Error('Function parameters might be object with 3 properties'));
+    }, new Error('Config.count param should be defined'));
     });
+
+test('Check the correctness of the arguments used', t => {
+    const numberGenerator = generateNumberSequence({
+        count: 5,
+        rangeMin: 0,
+        rangeMax: 10,
+    });
+    const seq = numberGenerator();
+        seq.forEach(item => {
+            if (item < 0 && item > 10) {
+            assert.fail('Huevuy diapazon suchara');
+        }
+    })
+})
 
     
