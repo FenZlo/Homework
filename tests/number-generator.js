@@ -2,7 +2,7 @@ const generateNumberSequence = require('../src/number-generator');
 const test = require('test');
 const assert = require('node:assert');
 
-test('Check generator of numbers from 0 to 10, the number of numbers is 5', t => {
+test('Check generator of numbers from 0 to 10, the amount of items is 5', t => {
     const numberGenerator = generateNumberSequence({
         count: 5,
         rangeMin: 0,
@@ -45,7 +45,6 @@ test('Check parametrs of generator for type', t => {
     assert.throws(() => {
         const numberGenerator = generateNumberSequence(123);
         const seq = numberGenerator();
-        seq; 
     }, new Error('Config param should be an object'));
     });
 
